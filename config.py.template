@@ -1,0 +1,29 @@
+import os
+
+# Create a new Pocket application at https://getpocket.com/developer/apps/
+# and enter the consumer key here
+pocket_consumer_key = ""
+
+# The Pocket authorization process needs a redirect_uri. The redirection page
+# does not need to provide any logic, but a nice page informing the user about
+# the next step would be nice, so I included this static html file
+redirect_uri = "https://andreasmischke.github.io/pocket-archiver/auth.html"
+
+# This is the base url for the Pocket API. You should not need to change that
+# usually.
+base_url = "https://getpocket.com/v3"
+
+# Your user access token will be stored in the filepath given here. The default
+# is a .pocket_consumer_key-access_token file in your home directory. If you
+# change this you will have to go through the authorization steps again.
+access_token_file = os.environ['HOME'] + "/.pocket_archiver-access_token"
+
+# I personally log any errors to my rollbar.com account. If you do not want to
+# do this, Just set this setting to False
+enable_rollbar = False
+
+# If you want to use rollbar you need to enter your key here
+rollbar_key = ''
+
+# If you want to use rollbar define the log level here
+rollbar_level = 'production'
